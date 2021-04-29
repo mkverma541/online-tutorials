@@ -1,0 +1,68 @@
+<head>
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+  </head>
+  <style>
+.vjs-big-play-button {
+    display: block !important;
+    background-color: #ffffff !important;
+    width: 70px !important;
+    cursor: pointer !important;
+    height: 70px !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: 0;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%);
+}
+   .vjs-big-play-button::before {
+    position: absolute;
+    content: "";
+    width: 88px;
+    height: 88px;
+    top: -9px;
+    border: 1px solid #ffffff;
+    left: -9px;
+    border-radius: 50%;
+  }
+  .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    #my-video_html5_api {
+     object-fit: cover;
+    border-radius: 15px;
+    box-shadow: #ccc 0px 0px 3px 4px;
+    background-color: #fff;
+    }
+    .video-js {
+        background-color: #ED1C24;
+    }
+ </style>
+  <body>
+
+    <video
+      id="my-video"
+      class="video-js"
+      controls
+      preload="auto"
+      width="640"
+      height="264"
+      
+      data-setup="{}"
+    >
+      <source src="https://airhubapp.com/assets/Thumb_nail_0.mp4" type="video/mp4" />
+      <source src="https://airhubapp.com/assets/Thumb_nail_0.mp4" type="video/webm" />
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank"
+          >supports HTML5 video</a
+        >
+      </p>
+    </video>
+  
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+  </body>
