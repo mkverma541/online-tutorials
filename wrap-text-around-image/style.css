@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -8,36 +9,90 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: Roboto, sans-serif;
+}
+h2 {
+    margin-bottom: 0.7rem;
 }
 p {
-    line-height: 2.0;
+    line-height: 1.7;
 }
-h1 {
-    margin-bottom: 1rem;
+section {
+    width: 100%;
+    display: block;
+    margin: auto;
+    background-color: #f3f3f3;
 }
 .container {
-    width: 1200px;
-    margin: auto;
+    max-width: 1400px;
+    background: #fff;
+    padding: 10px;
+    margin: 10px auto;
 }
-body {
-    overflow-x: hidden;
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    flex-wrap: wrap;
 }
-img {
-    max-width: 400px;
-    height: auto;
+.wrapper .card {
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
 }
-.img1 {
-    float: left;
-    shape-outside: url(img1.png);
-    shape-margin: 30px;
+.wrapper .card .imgBox, 
+.wrapper .card .contentBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-.img2 {
-    float: right;
-    shape-outside: url(img2.png);
-    shape-margin: 30px;
+.wrapper .card .imgBox img {
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wrapper .card .contentBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;    
+    transform-origin: right;
+}
+.wrapper .card:hover .contentBox::before {
+    transform: scaleX(1);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: left;
+}
+.wrapper .card .contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .card .contentBox .content {
+    position: relative;
+    padding: 30px;
+    text-align: left;
+    z-index: 1;
+    transition: 0.5s;
+    transform: translateX(-320px);
+    transition-delay: 0s;
+    color: #fff;
+}
+.wrapper .card:hover .contentBox .content {
+    transform: translateX(0px);
+    transition-delay: 0.5s;
 }
