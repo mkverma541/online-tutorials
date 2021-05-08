@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Wrap Text aroud image</title>
+        <meta name="viewport" content="device=width-device, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d17dd9fe1a.js" crossorigin="anonymous"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+<body>
+    <section>
+        <h2 class="text">Effect 02 : Wavy Text Animation</h2>
+       
+    </section>
+
+<script>
+    const text = document.querySelector('.text');
+    text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+    const element = document.querySelectorAll('span');
+    for(let i = 0; i < element.length; i++) {
+        element[i].style.animationDelay =  i*0.05 + 's';
+    }
+
+</script>    
+</body>
+</html>
