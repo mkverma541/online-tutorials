@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Responsive Navbar</title>
+        <meta name="viewport" content="device=width-device, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d17dd9fe1a.js" crossorigin="anonymous"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+<body>
+<section>
+    <div class="container">
+        <header id="header">
+            <a href="#" class="logo">Logo</a>
+            <div id="toggle"></div>
+            <div class="navbar" id="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+</section>
+<script>
+    const toggle = document.getElementById("toggle");
+    const navbar = document.querySelector('.navbar');
+    toggle.addEventListener('click', function(){
+        toggle.classList.toggle('active');
+        navbar.classList.toggle('active');
+    })
+
+</script>   
+</body>
+</html>
