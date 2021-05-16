@@ -75,7 +75,7 @@ body {
 
     transform: translateY(0px) rotate(-45deg);
 }
-.navbar {
+#navbar {
     position: relative;
     right: 100px;
     height: 60px;
@@ -84,30 +84,31 @@ body {
     transform: translateX(200%);
     transform-origin:right;
 }
-.navbar.active {
+#navbar.active {
     transform: translateX(0%);
 }
-.navbar ul {
+#navbar ul {
     display: flex;
 }
-.navbar ul li {
+#navbar ul li {
     list-style-type: none;
 }
-.navbar ul li  a {
+#navbar ul li  a {
     text-decoration: none;
     line-height: 60px;
     padding: 0 20px;
     text-decoration: none;
     color: #ff4159;
+    display: block;
 }
-.navbar ul li:hover {
+#navbar ul li:hover {
     background: #ff4159;
 }
-.navbar ul li:hover a {
+#navbar ul li:hover a {
     color: #fff;
 }
 @media (max-width: 991px) {
-    .navbar {
+    #navbar {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -115,9 +116,13 @@ body {
         height: calc(100% - 60px);
         text-align: center;
         transform-origin: bottom;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .navbar ul {
+    #navbar ul {
         display: block;
+        width: 100%;
     }
 
 }

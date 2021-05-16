@@ -11,7 +11,7 @@
         <header id="header">
             <a href="#" class="logo">Logo</a>
             <div id="toggle"></div>
-            <div class="navbar" id="navbar">
+            <div id="navbar">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -26,12 +26,21 @@
     </div>
 </section>
 <script>
+    const header = document.getElementById("header");
     const toggle = document.getElementById("toggle");
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.getElementById('navbar');
     toggle.addEventListener('click', function(){
         toggle.classList.toggle('active');
         navbar.classList.toggle('active');
     })
+
+
+    document.onclick = function(e){
+        if(e.target.id !== 'header' && e.target.id !== 'toggle' && e.target.id !== 'navbar') {
+            toggle.classList.remove('active');
+            navbar.classList.remove('active');
+        }
+    }
 
 </script>   
 </body>
