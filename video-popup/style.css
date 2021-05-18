@@ -55,16 +55,16 @@ body {
 .card p {
     line-height: 1.7;
 }
-.btn {
+.card .btn {
     display: inline-block;
     color: #000;
     text-decoration: none;
-    font-size: 19px;
-    margin-top: 20px;
+    font-size: 17px;
+    margin: 0px 20px 20px;
     border: 1px solid #000;
     padding: 10px;
 }
-.btn:hover {
+.card .btn:hover {
     background-color: #000;
     color: #fff;
 }
@@ -86,7 +86,7 @@ body {
     opacity: 0;
     transition: 0.3s;
 }
-.video-wrap.active {
+.card.active .video-wrap{
     opacity: 1;
     visibility: visible;
 }
@@ -103,10 +103,11 @@ body {
     bottom: 0;
 }
 .close-btn {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 20px;
     cursor: pointer;
+    z-index: 999;
 }
 
 .close-btn img {
