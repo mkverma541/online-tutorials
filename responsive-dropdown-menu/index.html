@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Responsive Dropdown</title>
+        <meta name="viewport" content="device=width-device, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d17dd9fe1a.js" crossorigin="anonymous"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+<body>
+<header>
+    <div class="wrap">
+        <div class="logo">
+            <a href="index.html">
+                 <img src="logo.png" title="Logo">
+            </a>
+        </div>
+        <div id="toggle">
+        </div>
+        <div class="nav" id="navbar">
+            <ul>
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="about-us.html" class="menu-link">About Us</a>
+                </li>
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">Taxi Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="haridwar-taxi-service.html">Haridwar Taxi</a></li>
+                        <li><a href="rishikesh-taxi-service.html">Rishikesh Taxi</a></li>
+                        <li><a href="dehradun-taxi-service.html">Dehradun Taxi</a></li>
+                        <li><a href="dehradun-airport-taxi-service.html">Dehradun Airport Taxi</a></li>
+                        <li><a href="haridwar-to-mussoorie-taxi-service.html">Haridwar To Mussoorie Taxi</a></li>
+                        <li><a href="haridwar-to-auli-taxi-service.html">Haridwar To Auli Taxi</a></li>
+                        <li><a href="haridwar-to-jim-corbett-taxi-service.html">Haridwar To Jim Corbett Taxi</a></li>
+                        <li><a href="haridwar-to-nainital-taxi-service.html">Haridwar To Nainital Taxi</a></li>
+                        <li><a href="haridwar-to-delhi-taxi-service.html">Haridwar To Delhi Taxi</a></li>
+                        <li><a href="rishikesh-to-delhi-taxi-service.html">Rishikesh To Delhi Taxi</a></li>
+                        <li><a href="char-dham-taxi-service.html">Char Dham Taxi</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">Tour Packages</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="haridwar-tour-package.html">Haridwar Tour Package</a></li>
+                        <li><a href="rishikesh-tour-package.html">Rishikesh Tour Package</a></li>
+                        <li><a href="dehradun-tour-package.html">Dehradun Tour Package</a></li>
+                        <li><a href="mussoorie-tour-package.html">Mussoorie Tour Package</a></li>
+                        <li><a href="nainital-tour-package.html">Nainital Tour Package</a></li>
+                        <li><a href="auli-tour-package.html">Auli Tour Package</a></li>
+                        <li><a href="kunjapuri-tour-package.html">Kunjapuri Tour Package</a></li>
+                        <li><a href="chardham-yatra-fixed-departure-from-haridwar.html">Chardham Fixed Departure From Haridwar</a></li>
+                        <li><a href="chardham-yatra-fixed-departure-from-delhi.html">Chardham Fixed Departure From Delhi</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">Adventure Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="white-river-rafting-in-rishikesh.html">White River Rafting in Rishikesh</a></li>
+                        <li><a href="camping-in-rishikesh.html">Camping in Rishikesh</a></li>
+                        <li><a href="bungee-jumping-in-rishikesh.html">Bungee Jumping in Rishikesh</a></li>
+                        <li><a href="water-falls-in-rishikesh.html">Water falls in Rishikesh</a></li>
+                        <li><a href="jungle-safari-in-raja-ji-naitional-park.html">Jungle safari in Raja ji Naitional Park</a></li>
+                        <li><a href="jungle-safari-in-jim-corbett-national-park.html">Jungle safari in Jim Corbett national Park</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="contact-us.html" class="menu-link">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<script>
+    const toggle = document.getElementById('toggle');
+    const header = document.querySelector('header');
+    const nav = document.querySelector('.nav')
+    toggle.addEventListener('click', function(){
+        toggle.classList.toggle('active');
+        nav.classList.toggle('active');
+    })
+
+    const navItem = document.querySelectorAll('header .nav ul .menu-item');
+    console.log(navItem);
+    makeActive = function(){
+        for (let i = 0; i < navItem.length; i++)
+        navItem[i].classList.remove('active');
+        this.classList.toggle('active');
+    };
+    for (let i = 0; i < navItem.length; i++)
+    navItem[i].addEventListener('mousedown', makeActive);
+
+</script>
+</body>
+</html>
