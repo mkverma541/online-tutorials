@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Responsive Dropdown</title>
+        <meta name="viewport" content="device=width-device, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d17dd9fe1a.js" crossorigin="anonymous"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+<body>
+
+<div include-html="header.html"  id="header"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("*[include-html]").each(function(){
+			var i = jQuery(this).attr("include-html");
+			var divid = jQuery(this).attr('id');
+			jQuery.ajax({
+				url : i,
+				success : function(data){
+					jQuery("#"+divid).html(data);
+				},
+				error : function(){
+					jQuery("#"+divid).html("<p style='color:red;font-weight:bold;font-size:14px;font-family: system-ui;'>Page not found!</p>");
+				}
+			});
+		});
+	});
+</script>
+
+</body>
+</html>
